@@ -1,55 +1,194 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-theme="light">
+<html lang="zh-CN" data-theme="dark" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="zpx & bzx的情侣空间">
-  <title>zpx & bzx的情侣空间</title>
+  <meta name="description" content="zpx &amp; bzx 的情侣空间">
+  <meta name="theme-color" content="#120f18">
+  <title>zpx &amp; bzx 的情侣空间</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
-  <header class="hero">
-    <p class="eyebrow">OUR LITTLE UNIVERSE</p>
-    <h1>zpx & bzx的情侣空间</h1>
-    <p class="since">
-      从 <time id="start-date" datetime="2026-10-03">2026 年 10 月 3 日</time> 开始
-    </p>
-    <p class="counter">我们已经在一起 <strong id="days">0</strong> 天</p>
-    <button id="theme-toggle" type="button" aria-pressed="false">切换夜间模式</button>
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <div class="aurora" aria-hidden="true">
+    <span class="aurora-blob blob-1"></span>
+    <span class="aurora-blob blob-2"></span>
+    <span class="aurora-blob blob-3"></span>
+    <div class="stars" id="stars"></div>
+  </div>
+  <div class="floating-hearts" id="floating-hearts" aria-hidden="true"></div>
+
+  <button class="theme-toggle" id="theme-toggle" type="button" aria-label="切换主题" aria-pressed="true">☀</button>
+
+  <header class="hero" id="top">
+    <div class="hero-inner">
+      <p class="eyebrow">OUR LITTLE UNIVERSE</p>
+      <h1>
+        <span class="hero-name">zpx <span class="amp">&amp;</span> bzx</span>
+        <span class="hero-title">的情侣空间</span>
+      </h1>
+      <p class="since">
+        从 <time id="start-date" datetime="2026-10-03">2026 年 10 月 3 日</time> 开始
+      </p>
+      <p class="counter">我们已经在一起 <strong id="days">0</strong> 天</p>
+      <p class="hero-copy">兜兜转转，还是你。</p>
+      <nav class="hero-actions" aria-label="页面导航">
+        <a class="button primary" href="#story">读我们的故事</a>
+        <a class="button ghost" href="#wishes">看看愿望清单</a>
+      </nav>
+    </div>
+    <div class="scroll-hint" aria-hidden="true"><span></span>SCROLL</div>
   </header>
 
   <main>
-    <section class="card">
-      <h2>关于我们</h2>
-      <p>故事始于 2016 年 9 月的三中 345 班教室，初见时我们有幸成为同桌。</p>
-
-      <p>年少的情愫悄悄埋藏，直到中考落幕的那个夏天，同赴厦门的旅程，让我们顺理成章走到一起。后来疫情相隔，短暂的故事遗憾收尾。</p>
-
-      <p>时光一晃七年。2026 年 9 月 8 日，一条朋友圈成为重逢的契机：你恰逢生病，而我刚走完保研的关卡，对前路终于有了底气。一次问候，重新靠近，兜兜转转，我们再续前缘。</p>
-
-      <p>原来有些相遇，不会真正落幕，只是在等一个合适的时机，再次相拥。</p>
+    <section class="stats reveal" aria-label="恋爱数据">
+      <article class="stat-card">
+        <strong id="days-copy">0</strong>
+        <span>在一起的天数</span>
+      </article>
+      <article class="stat-card">
+        <strong id="years-known">0</strong>
+        <span>相识的年数</span>
+      </article>
+      <article class="stat-card">
+        <strong>5</strong>
+        <span>故事章节</span>
+      </article>
     </section>
 
-    <section class="card">
-      <h2>照片墙</h2>
-      <div class="photos">
-        <img src="images/photo-1.svg" alt="照片占位图 1">
-        <img src="images/photo-2.svg" alt="照片占位图 2">
-        <img src="images/photo-3.svg" alt="照片占位图 3">
+    <section class="section reveal" id="story">
+      <div class="section-heading">
+        <p class="section-kicker">OUR STORY</p>
+        <h2>兜兜转转，还是你</h2>
+        <p>从 345 班的同桌，到再次相拥。时间绕了一圈，把我们带回彼此身边。</p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <p class="timeline-date">2016 · 09</p>
+            <h3>初见</h3>
+            <p>故事始于三中 345 班教室，初见时我们有幸成为同桌。年少的情愫悄悄埋藏。</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <p class="timeline-date">中考后的夏天</p>
+            <h3>厦门</h3>
+            <p>直到中考落幕的那个夏天，同赴厦门的旅程，让我们顺理成章走到一起。</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <p class="timeline-date">疫情时期</p>
+            <h3>短暂告别</h3>
+            <p>后来疫情相隔，短暂的故事遗憾收尾。</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <p class="timeline-date">2026 · 09 · 08</p>
+            <h3>重逢</h3>
+            <p>一条朋友圈成为重逢的契机：你恰逢生病，而我刚走完保研的关卡，对前路终于有了底气。</p>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="timeline-content">
+            <p class="timeline-date">2026 · 10 · 03</p>
+            <h3>再续前缘</h3>
+            <p>一次问候，重新靠近，兜兜转转，我们再续前缘。原来有些相遇，不会真正落幕，只是在等一个合适的时机，再次相拥。</p>
+          </div>
+        </article>
       </div>
     </section>
 
-    <section class="card">
-      <h2>想对你说</h2>
-      <p>有些话，只在这里说。</p>
-      <button id="note-toggle" type="button">打开悄悄话</button>
-      <p id="love-note" hidden>很高兴和你一起，把普通的日子过成纪念日。</p>
+    <section class="section reveal" id="gallery">
+      <div class="section-heading">
+        <p class="section-kicker">MEMORIES</p>
+        <h2>照片墙</h2>
+        <p>先把位置留好，等你们把故事里的照片放进来。</p>
+      </div>
+
+      <div class="photos">
+        <button class="photo-card" type="button" data-full="images/photo-1.svg" aria-label="查看照片 1">
+          <img src="images/photo-1.svg" alt="照片占位图 1">
+          <span class="photo-label">PHOTO 01</span>
+        </button>
+        <button class="photo-card" type="button" data-full="images/photo-2.svg" aria-label="查看照片 2">
+          <img src="images/photo-2.svg" alt="照片占位图 2">
+          <span class="photo-label">PHOTO 02</span>
+        </button>
+        <button class="photo-card" type="button" data-full="images/photo-3.svg" aria-label="查看照片 3">
+          <img src="images/photo-3.svg" alt="照片占位图 3">
+          <span class="photo-label">PHOTO 03</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="section reveal" id="wishes">
+      <div class="section-heading">
+        <p class="section-kicker">BUCKET LIST</p>
+        <h2>想一起完成的事</h2>
+        <p>每完成一件，就点亮一格。</p>
+      </div>
+
+      <div class="wish-card">
+        <div class="wish-top">
+          <span>OUR BUCKET LIST</span>
+          <strong><span id="wish-count">0</span> / 6</strong>
+        </div>
+        <div class="wish-progress"><span id="wish-progress-bar"></span></div>
+        <div class="wish-list">
+          <label class="wish-item"><input type="checkbox" data-wish="sea"><span class="wish-box"></span><span class="wish-text">一起去看一次海</span></label>
+          <label class="wish-item"><input type="checkbox" data-wish="cook"><span class="wish-box"></span><span class="wish-text">一起认真做一顿饭</span></label>
+          <label class="wish-item"><input type="checkbox" data-wish="photo"><span class="wish-box"></span><span class="wish-text">拍一组属于我们的写真</span></label>
+          <label class="wish-item"><input type="checkbox" data-wish="trip"><span class="wish-box"></span><span class="wish-text">去一次没有计划的长途旅行</span></label>
+          <label class="wish-item"><input type="checkbox" data-wish="newyear"><span class="wish-box"></span><span class="wish-text">一起跨年，看一次日出</span></label>
+          <label class="wish-item"><input type="checkbox" data-wish="home"><span class="wish-box"></span><span class="wish-text">把未来的小家布置成喜欢的样子</span></label>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="letter">
+      <div class="letter-card">
+        <p class="section-kicker">A NOTE FOR YOU</p>
+        <h2>想对你说</h2>
+        <p class="letter-intro">有些话，想慢慢说给你听。</p>
+        <button class="button primary" id="note-toggle" type="button" aria-expanded="false">打开这封信</button>
+        <div class="letter-content" id="love-note" hidden>
+          <p>很高兴和你一起，把普通的日子过成纪念日。谢谢你重新走进我的生活，也谢谢我们都没有放弃彼此。</p>
+          <p class="letter-sign">— zpx</p>
+        </div>
+        <div class="random-note">
+          <span class="random-label">今日情话</span>
+          <p id="random-note-text" aria-live="polite"></p>
+          <button class="text-button" id="random-note-button" type="button">换一句 ×</button>
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <p>Made with love by xiaoman905</p>
+    <p>zpx <span class="amp">&amp;</span> bzx · Our Little Universe</p>
+    <p class="footer-small">Made with love, HTML, CSS &amp; JavaScript.</p>
   </footer>
+
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="回到顶部">↑</button>
+
+  <div class="lightbox" id="lightbox" hidden>
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="关闭">×</button>
+    <img id="lightbox-image" src="" alt="">
+  </div>
 </body>
 </html>
