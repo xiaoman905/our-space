@@ -211,6 +211,10 @@ document.addEventListener("keydown", (event) => {
 
 const wishInputs = Array.from(document.querySelectorAll("[data-wish]"));
 const wishCount = document.querySelector("#wish-count");
+const wishTotal = document.querySelector("#wish-total");
+const wishCaption = document.querySelector("#wish-caption");
+const wishCard = document.querySelector("#wish-card");
+const wishReset = document.querySelector("#wish-reset");
 const wishProgressBar = document.querySelector("#wish-progress-bar");
 
 let savedWishes = [];
@@ -226,6 +230,32 @@ wishInputs.forEach((input) => {
   input.addEventListener("change", updateWishes);
 });
 
+function wishCaptionFor(completed, total) {
+  if (completed === 0) {
+    return "还没开始，挑一件最想做的先吧。";
+  }
+
+  if (completed >= total) {
+    return "全部点亮了，接下来就是一件一件去实现它们。";
+  }
+
+  const ratio = completed / total;
+
+  if (ratio < 0.25) {
+    return "第一格已经亮了，好故事都从很小的一步开始。";
+  }
+
+  if (ratio < 0.5) {
+    return "四分之一了，照着这个节奏慢慢走。";
+  }
+
+  if (ratio < 0.75) {
+    return "已经过半啦，你们比想象中更默契。";
+  }
+
+  return "就剩最后几件了，别急着一次做完。";
+}
+
 function updateWishes() {
   const completed = wishInputs.filter((input) => input.checked);
   const total = wishInputs.length;
@@ -233,6 +263,18 @@ function updateWishes() {
 
   if (wishCount) {
     wishCount.textContent = String(completed.length);
+  }
+
+  if (wishTotal) {
+    wishTotal.textContent = String(total);
+  }
+
+  if (wishCaption) {
+    wishCaption.textContent = wishCaptionFor(completed.length, total);
+  }
+
+  if (wishCard) {
+    wishCard.classList.toggle("is-complete", total > 0 && completed.length === total);
   }
 
   if (wishProgressBar) {
@@ -247,6 +289,16 @@ function updateWishes() {
 }
 
 updateWishes();
+
+if (wishReset) {
+  wishReset.addEventListener("click", () => {
+    wishInputs.forEach((input) => {
+      input.checked = false;
+    });
+
+    updateWishes();
+  });
+}
 
 const notes = [
   "喜欢你，是我做过最不后悔的决定。",

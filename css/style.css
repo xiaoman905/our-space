@@ -613,6 +613,66 @@ h1 {
   gap: 12px;
 }
 
+.wish-caption {
+  margin: -4px 0 24px;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.wish-groups {
+  display: grid;
+  gap: 28px;
+}
+
+.wish-group-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 12px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+}
+
+.wish-group-title span {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 9px;
+  color: var(--accent);
+  font-size: 0.8rem;
+  background: rgba(255, 122, 158, 0.12);
+}
+
+.wish-group .wish-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.wish-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.wish-tip {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.wish-card.is-complete {
+  border-color: rgba(255, 122, 158, 0.45);
+  box-shadow: 0 0 0 1px rgba(255, 122, 158, 0.22), 0 30px 70px rgba(255, 122, 158, 0.16);
+}
+
+.wish-card.is-complete .wish-caption {
+  color: var(--accent);
+}
+
 .wish-item {
   position: relative;
   display: flex;
@@ -996,6 +1056,15 @@ footer .amp {
   .wish-card,
   .letter-card {
     padding: 28px 20px;
+  }
+
+  .wish-group .wish-list {
+    grid-template-columns: 1fr;
+  }
+
+  .wish-footer {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .theme-toggle {

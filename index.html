@@ -143,19 +143,75 @@
         <p>每完成一件，就点亮一格。</p>
       </div>
 
-      <div class="wish-card">
+      <div class="wish-card" id="wish-card">
         <div class="wish-top">
           <span>OUR BUCKET LIST</span>
-          <strong><span id="wish-count">0</span> / 6</strong>
+          <strong><span id="wish-count">0</span> / <span id="wish-total">0</span></strong>
         </div>
         <div class="wish-progress"><span id="wish-progress-bar"></span></div>
-        <div class="wish-list">
-          <label class="wish-item"><input type="checkbox" data-wish="sea"><span class="wish-box"></span><span class="wish-text">一起去看一次海</span></label>
-          <label class="wish-item"><input type="checkbox" data-wish="cook"><span class="wish-box"></span><span class="wish-text">一起认真做一顿饭</span></label>
-          <label class="wish-item"><input type="checkbox" data-wish="photo"><span class="wish-box"></span><span class="wish-text">拍一组属于我们的写真</span></label>
-          <label class="wish-item"><input type="checkbox" data-wish="trip"><span class="wish-box"></span><span class="wish-text">去一次没有计划的长途旅行</span></label>
-          <label class="wish-item"><input type="checkbox" data-wish="newyear"><span class="wish-box"></span><span class="wish-text">一起跨年，看一次日出</span></label>
-          <label class="wish-item"><input type="checkbox" data-wish="home"><span class="wish-box"></span><span class="wish-text">把未来的小家布置成喜欢的样子</span></label>
+        <p class="wish-caption" id="wish-caption">还没开始，挑一件最想做的先吧。</p>
+
+        <div class="wish-groups">
+          <section class="wish-group">
+            <h3 class="wish-group-title"><span aria-hidden="true">✈</span> 一起去远方</h3>
+            <div class="wish-list">
+              <label class="wish-item"><input type="checkbox" data-wish="sea"><span class="wish-box"></span><span class="wish-text">一起去看一次海</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="snow"><span class="wish-box"></span><span class="wish-text">一起看一场大雪</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="aurora"><span class="wish-box"></span><span class="wish-text">一起去看一次极光</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="train"><span class="wish-box"></span><span class="wish-text">坐一趟很久的绿皮火车</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="newcity"><span class="wish-box"></span><span class="wish-text">去一座谁都没去过的城市</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="abroad"><span class="wish-box"></span><span class="wish-text">一起出国旅行一次</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="roadtrip"><span class="wish-box"></span><span class="wish-text">自驾走一段没有攻略的路</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="camp"><span class="wish-box"></span><span class="wish-text">露营一次，躺在帐篷外数星星</span></label>
+            </div>
+          </section>
+
+          <section class="wish-group">
+            <h3 class="wish-group-title"><span aria-hidden="true">⌂</span> 一起过日子</h3>
+            <div class="wish-list">
+              <label class="wish-item"><input type="checkbox" data-wish="cook"><span class="wish-box"></span><span class="wish-text">一起认真做一顿饭</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="market"><span class="wish-box"></span><span class="wish-text">一起去菜市场买一次菜</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="cat"><span class="wish-box"></span><span class="wish-text">一起养一只喜欢的小猫咪</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="home"><span class="wish-box"></span><span class="wish-text">把未来的小家布置成喜欢的样子</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="binge"><span class="wish-box"></span><span class="wish-text">熬夜追完一整部剧</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="sunrise"><span class="wish-box"></span><span class="wish-text">早起去看一次日出</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="newdish"><span class="wish-box"></span><span class="wish-text">一起学会一道彼此爱吃的菜</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="run"><span class="wish-box"></span><span class="wish-text">一起坚持运动一个月</span></label>
+            </div>
+          </section>
+
+          <section class="wish-group">
+            <h3 class="wish-group-title"><span aria-hidden="true">❁</span> 一起留纪念</h3>
+            <div class="wish-list">
+              <label class="wish-item"><input type="checkbox" data-wish="photo"><span class="wish-box"></span><span class="wish-text">拍一组属于我们的写真</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="birthday"><span class="wish-box"></span><span class="wish-text">陪彼此过一次生日</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="newyear"><span class="wish-box"></span><span class="wish-text">一起跨年，看一次烟花</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="anniversary"><span class="wish-box"></span><span class="wish-text">每个纪念日都留下合影</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="album"><span class="wish-box"></span><span class="wish-text">做一本只属于我们的相册</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="letter5y"><span class="wish-box"></span><span class="wish-text">各写一封信，五年后再拆</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="film"><span class="wish-box"></span><span class="wish-text">用胶片相机拍一卷日常</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="vlog"><span class="wish-box"></span><span class="wish-text">录一段只给彼此看的视频日记</span></label>
+            </div>
+          </section>
+
+          <section class="wish-group">
+            <h3 class="wish-group-title"><span aria-hidden="true">✦</span> 一起变更好</h3>
+            <div class="wish-list">
+              <label class="wish-item"><input type="checkbox" data-wish="fund"><span class="wish-box"></span><span class="wish-text">一起存一笔旅行基金</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="cert"><span class="wish-box"></span><span class="wish-text">一起考下一张证书</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="instrument"><span class="wish-box"></span><span class="wish-text">一起异地刷了同一部综艺</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="book"><span class="wish-box"></span><span class="wish-text">一起异地同时看一部电影</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="gym"><span class="wish-box"></span><span class="wish-text">一起健身，互相监督三个月</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="family"><span class="wish-box"></span><span class="wish-text">正式见彼此的家人</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="plan"><span class="wish-box"></span><span class="wish-text">坐下来认真聊一次未来</span></label>
+              <label class="wish-item"><input type="checkbox" data-wish="concert"><span class="wish-box"></span><span class="wish-text">一起看一场喜欢的演唱会</span></label>
+            </div>
+          </section>
+        </div>
+
+        <div class="wish-footer">
+          <span class="wish-tip">清单会一直变长，慢慢来就好。</span>
+          <button class="text-button" id="wish-reset" type="button">清空勾选</button>
         </div>
       </div>
     </section>
